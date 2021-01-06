@@ -1,14 +1,37 @@
 .header {
+  background-image: url('/moon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
+  background-color: white;
+  height: 18vh;
 }
 .avatar {
   width: 100%;
-  border-bottom: black solid 0.2vh;
-  background-color: #4a90e2;
   display: flex;
-  justify-content: flex-end;
+  justify-content: right;
+}
+
+.astronaut {
+  height: 12vh;
+  width: 12vw;
+  display: flex;
+  justify-content: flex-start;
+  animation-name: astronaut;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes astronaut {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(15deg);
+  }
 }

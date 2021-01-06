@@ -150,3 +150,9 @@ body ::-webkit-scrollbar-thumb {
   font-family: 'Roboto', sans-serif !important;
   border-radius: 10px !important;
 }
+
+.quoteHeader {
+  text-decoration: underline;
+  text-decoration-color: #4a90e2;
+  text-decoration-thickness: 2px;
+}

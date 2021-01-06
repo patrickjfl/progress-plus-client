@@ -1,6 +1,6 @@
 .container {
   margin-top: 2rem;
-  padding: 2rem;
+  /* padding: 2rem; */
   background-color: #31986a;
   position: fixed;
   bottom: 0;
@@ -11,6 +11,7 @@
 }
 .icons {
   width: 100px;
-  height: 100px;
+  height: 50px;
   color: white;
+  padding-top: 1rem;
 }

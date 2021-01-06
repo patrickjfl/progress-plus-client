@@ -6,13 +6,13 @@ function AppFooter() {
     <div className={styles.footer}>
       <footer className={styles.container}>
         <a href='https://github.com/' target='_blank'>
-          <i className={`fab fa-github fa-3x ${styles.icons}`}></i>
+          <i className={`fab fa-github fa-2x ${styles.icons}`}></i>
         </a>
         <a href='http://freecodecamp.org/' target='_blank'>
-          <i className={`fab fa-free-code-camp fa-3x ${styles.icons}`}></i>
+          <i className={`fab fa-free-code-camp fa-2x ${styles.icons}`}></i>
         </a>
         <a href='https://stackoverflow.com/' target='_blank'>
-          <i className={`fab fa-stack-overflow fa-3x ${styles.icons}`}></i>
+          <i className={`fab fa-stack-overflow fa-2x ${styles.icons}`}></i>
         </a>
       </footer>
     </div>
