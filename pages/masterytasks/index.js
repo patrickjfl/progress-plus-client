@@ -15,7 +15,12 @@ export default function MasteryTasks({ session }) {
 	};
 	const [state, dispatch] = useReducer(useGraphSelect, initialState);
 
-	console.log(session);
+	// console.log(session);
+	const allRepos = session.githubData
+	const masteryRepos = allRepos.filter((repo) => {
+		return repo.name.toLowerCase().includes("mastery")
+	})
+	console.log({masteryRepos})
 
 	return (
 		<>
@@ -60,9 +65,31 @@ export async function getServerSideProps(context) {
 			auth: `token ${githubToken}`,
 		});
 
-		const response = await octokit.request('GET /user/repos', {
-			per_page: 100,
+		let i = 1;
+		let response;
+		do {
+		const nextPage = await octokit.request('GET /user/repos', {
+			per_page: 100, 
+			page: i,
 		});
+		response = [...response, nextPage]
+		i++
+		} while (nextPage !== [] || i < 6)
+
+		// const masteryRepos = await response.map((repo) => {
+		// 	if (repo.name.toLowerCase().includes("mastery")){
+		// 		return repo.name
+		// 	}
+		// })
+
+		// console.log({masteryRepos})
+
+		//get all SoC repos for user
+		//search repos for mastery in title
+		//fetch all of these repos by name
+		//filter info we want
+
+
 		/* 	const response = await octokit.request('GET /orgs/{org}/members', {
 			org: 'SchoolOfCode',
 			per_page: 100,
