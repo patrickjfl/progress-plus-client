@@ -59,6 +59,7 @@ export function AuthContextProvider({ children }) {
 				var errorCode = error.code;
 				var errorMessage = error.message;
 				// The email of the user's account used.
+				console.log({error})
 				var email = error.email;
 				console.log(email);
 				// The firebase.auth.AuthCredential type that was used.
@@ -96,7 +97,7 @@ export function AuthContextProvider({ children }) {
 			}
 
 			const token = await user.getIdToken();
-			//	console.log(token);
+				console.log({token});
 			setUser(user);
 			nookies.set(null, 'token', token, { path: '/' });
 		});
