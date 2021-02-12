@@ -1,4 +1,21 @@
-//use react-firebaseui library follow docs at https://www.npmjs.com/package/react-firebaseui
+import { useAuthContext } from '../../../firebaseUtils/useAuthContext';
+import 'firebase/auth';
+import firebaseInit from '../../../firebaseUtils/firebaseInit';
+import styles from './firebase.module.css';
+//call the function for Firebase Initialisation
+firebaseInit();
+
+export default function FirebaseAuth() {
+	const { login } = useAuthContext();
+	return (
+		<div>
+			<button onClick={login}>LOGIN</button>
+		</div>
+	);
+}
+
+//-------------------> OLD CODE - FIREBASEUI <----------------------------------------------
+/* //use react-firebaseui library follow docs at https://www.npmjs.com/package/react-firebaseui
 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase/app';
@@ -28,3 +45,4 @@ export default function FirebaseAuth() {
     </div>
   );
 }
+ */
